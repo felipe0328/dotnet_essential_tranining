@@ -1,7 +1,7 @@
 ﻿// LinkedIn Learning Course .NET Programming with C# by Joe Marini
 // Solution to Programming Challenge for "How Many Days?"
 
-string thedate = "";                // holds the user-entered date string
+string? thedate = "";                // holds the user-entered date string
 DateTime today = DateTime.Today;    // holds the current date with time of 12:00:00
 
 do {
