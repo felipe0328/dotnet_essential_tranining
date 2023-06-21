@@ -5,9 +5,8 @@
 const string filename = "TestFile.txt";
 
 if (!File.Exists(filename)) {
-    using (StreamWriter sw = File.CreateText(filename)) {
-        sw.WriteLine("This is a text file.");
-    }
+    using StreamWriter sw = File.CreateText(filename);
+    sw.WriteLine("This is a text file.");
 }
 
 // Get some information about the file
@@ -20,7 +19,7 @@ Console.WriteLine(File.GetAttributes(filename));
 
 // We can also get general information using a FileInfo 
 try {
-    FileInfo fi = new FileInfo(filename);
+    FileInfo fi = new(filename);
     Console.WriteLine($"{fi.Length}");
     Console.WriteLine($"{fi.Directory}");
     Console.WriteLine($"{fi.IsReadOnly}");
@@ -30,6 +29,6 @@ catch (Exception e) {
 }
 
 // File information can also be manipulated
-DateTime dt = new DateTime(2020, 7, 1);
+DateTime dt = new(2020, 7, 1);
 File.SetCreationTime(filename, dt);
 Console.WriteLine(File.GetCreationTime(filename));

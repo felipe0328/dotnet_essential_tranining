@@ -16,8 +16,7 @@ if (File.Exists(filename)) {
     File.Delete(filename);
 }
 else {
-    using (StreamWriter sw = File.CreateText(filename)) {
-        sw.WriteLine("This is a text file.");
-    }
+    using StreamWriter sw = File.CreateText(filename);
+    sw.WriteLine("This is a text file.");
 }
 Console.WriteLine(File.Exists(filename));

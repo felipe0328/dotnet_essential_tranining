@@ -4,7 +4,7 @@
 // Example file for formatting date information
 
 // Define a date
-DateTime AprFools = new DateTime(2025, 4, 1, 13, 23, 30);
+DateTime AprFools = new(2025, 4, 1, 13, 23, 30);
 
 // TODO: 'd' Short date: mm/dd/yyyy (or dd/mm depending on locale)
 Console.WriteLine($"{AprFools:d}");

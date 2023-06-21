@@ -26,8 +26,8 @@ now = now.AddMonths(1);
 Console.WriteLine(now);
 
 // TODO: The TimeSpan class represents a duration of time
-DateTime AprilFools = new DateTime(now.Year, 4, 1);
-DateTime NewYears = new DateTime(now.Year, 1, 1);
+DateTime AprilFools = new(now.Year, 4, 1);
+DateTime NewYears = new(now.Year, 1, 1);
 TimeSpan interval = AprilFools - NewYears;
 Console.WriteLine(interval);
 

@@ -11,16 +11,14 @@ long XLSSize = 0, DOCSize = 0, PPTSize = 0;
 long totalfiles = 0;
 long totalsize = 0;
 
-bool IsOfficeFile(string filename) {
+static bool IsOfficeFile(string filename) {
     // if the file ends with a known office suffix, return true
-    if (filename.EndsWith(".xlsx") || filename.EndsWith(".docx")
-        || filename.EndsWith(".pptx"))
-        return true;
-    return false;
+    return filename.EndsWith(".xlsx") || filename.EndsWith(".docx")
+        || filename.EndsWith(".pptx");
 }
 
 // create a DirectoryInfo for the given folder
-DirectoryInfo di = new DirectoryInfo(folder);
+DirectoryInfo di = new(folder);
 
 foreach (FileInfo fi in di.EnumerateFiles()) {
     // Is this an Office file? (XLSX, DOCX, PPTX)

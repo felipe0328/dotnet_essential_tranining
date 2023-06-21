@@ -9,19 +9,23 @@ const string thestr = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 Stopwatch sw;
 
 // TODO: Use a Timeout value when executing RegEx to guard against bad input
-
+const int MAX_REGEX_TIME = 1000;
+TimeSpan timeout = TimeSpan.FromMilliseconds(MAX_REGEX_TIME);
 
 // Run the expression and output the result
-try {
+try
+{
     sw = Stopwatch.StartNew();
-    Regex CapWords = new Regex(@"(a+a+)+b", RegexOptions.None);
+    Regex CapWords = new("(a+a+)+b", RegexOptions.None, timeout);
     MatchCollection mc = CapWords.Matches(thestr);
     sw.Stop();
     Console.WriteLine($"Found {mc.Count} matches in {sw.Elapsed} time:");
-    foreach (Match match in mc) {
+    foreach (Match match in mc.Cast<Match>())
+    {
         Console.WriteLine($"'{match.Value}' found at position {match.Index}");
     }
 }
-catch (Exception e) {
-    Console.WriteLine(e);
+catch (RegexMatchTimeoutException e)
+{
+    Console.WriteLine($"The regex took too long to execute! {e.MatchTimeout}");
 }

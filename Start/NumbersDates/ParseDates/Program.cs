@@ -2,7 +2,8 @@
 // Example file for parsing dates from strings
 
 // Collection of various date string formats to attempt parsing
-string[] sampleDateTimes = {
+string[] sampleDateTimes =
+{
     "January 1, 2025 9:30 AM",
     "1/1/2025",
     "Jan 1, 2025 7:30PM",
@@ -12,13 +13,16 @@ string[] sampleDateTimes = {
     "Jan 1 '15",
 };
 
-foreach (string datestr in sampleDateTimes) {
-    DateTime result;
+foreach (string datestr in sampleDateTimes)
+{
     // TODO: Use the static class function TryParse to try parsing the dates
-    bool parseCorrect =  DateTime.TryParse(datestr, out result);
-    if (parseCorrect){
+    bool parseCorrect = DateTime.TryParse(datestr, out DateTime result);
+    if (parseCorrect)
+    {
         Console.WriteLine($"{datestr, -25} -> gets parsed as {result}");
-    } else {
+    }
+    else
+    {
         Console.WriteLine($"{datestr, -25} <- was not parsed correctly");
     }
 }
