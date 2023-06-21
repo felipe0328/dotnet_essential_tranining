@@ -9,10 +9,14 @@ const string filename = "TestFile.txt";
 
 // TODO: Determine if a file exists
 Console.WriteLine(File.Exists(filename));
-if (File.Exists(filename)){
+if (File.Exists(filename))
+{
     File.Delete(filename);
-} else {
-    using(StreamWriter sw = File.CreateText(filename)){
+}
+else
+{
+    using (StreamWriter sw = File.CreateText(filename))
+    {
         sw.WriteLine("This is a text file.");
     }
 }

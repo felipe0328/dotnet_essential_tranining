@@ -1,0 +1,12 @@
+Summary
+----------
+Number of Files: 12
+Number of Docx: 5
+Number of Pptx: 3
+Number of Xlsx: 4
+
+----------
+Total Size:       2,674,311 bytes
+Size of Docx:       1,196,567 bytes
+Size of Pptx:       1,403,482 bytes
+Size of Xlsx:          74,262 bytes

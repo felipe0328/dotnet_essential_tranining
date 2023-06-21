@@ -9,13 +9,12 @@ while(isProgramRunning){
         continue;
     }
 
-    if (entry.ToLower() == "exit"){
+    if (string.Equals(entry, "exit", StringComparison.OrdinalIgnoreCase)) {
         isProgramRunning = false;
         continue;
     }
 
-    DateTime dt;
-    if(DateTime.TryParse(entry, out dt)){
+    if (DateTime.TryParse(entry, out DateTime dt)) {
         checkDate(dt);
         continue;
     } else {
@@ -24,9 +23,7 @@ while(isProgramRunning){
     }
 }
 
-
-void checkDate(DateTime dt){
-    DateOnly dateonly = DateOnly.FromDateTime(dt);
+static void checkDate(DateTime dt){
     DateTime now = DateTime.Now;
 
     if (dt.Date == now.Date){
@@ -35,7 +32,7 @@ void checkDate(DateTime dt){
     }
 
     TimeSpan result = now - dt;
-    
+
     if(dt < now){
         Console.WriteLine($"That date was {result.Days} days ago.");
     } else {
