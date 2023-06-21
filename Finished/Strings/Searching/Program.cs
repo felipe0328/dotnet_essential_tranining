@@ -20,7 +20,7 @@ Console.WriteLine($"{teststr.IndexOf("the", StringComparison.CurrentCultureIgnor
 Console.WriteLine($"{teststr.LastIndexOf("the")}");
 
 // Determining empty, null, or whitespace
-string str1 = null;
+string? str1 = null;
 string str2 = "   ";
 string str3 = String.Empty;
 Console.WriteLine($"{String.IsNullOrEmpty(str1)}");

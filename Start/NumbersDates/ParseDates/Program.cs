@@ -15,4 +15,10 @@ string[] sampleDateTimes = {
 foreach (string datestr in sampleDateTimes) {
     DateTime result;
     // TODO: Use the static class function TryParse to try parsing the dates
+    bool parseCorrect =  DateTime.TryParse(datestr, out result);
+    if (parseCorrect){
+        Console.WriteLine($"{datestr, -25} -> gets parsed as {result}");
+    } else {
+        Console.WriteLine($"{datestr, -25} <- was not parsed correctly");
+    }
 }
